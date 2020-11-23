@@ -86,20 +86,57 @@ Built as group project app for Android CodePath 2020 Fall Cohort.
 [Add picture of your hand sketched wireframes in this section]
 <img src="PXL_20201113_051915901.jpg" width=600>
 
+### [BONUS] Digital Wireframes & Mockups
+
+### [BONUS] Interactive Prototype
+
 ## Schema 
 ### Models
-#### Post
+#### Gift
 
    | Property      | Type     | Description |
    | ------------- | -------- | ------------|
-   | objectId      | String   | unique id for the user post (default field) |
-   | author        | Pointer to User| image author |
-   | image         | File     | image that user posts |
-   | caption       | String   | image caption by author |
-   | commentsCount | Number   | number of comments that has been posted to an image |
-   | likesCount    | Number   | number of likes for the post |
-   | createdAt     | DateTime | date when post is created (default field) |
-   | updatedAt     | DateTime | date when post is last updated (default field) |
+   | objectName    | String   | unique name of product from API |
+   | ID            | integer  | Unique product ID |
+   | image         | object/file?     | image of product |
+   | categories    | List<String>   | list of strings to search for certain product types |
+   | rating        | Float   | number between 0 to 5 representing average user rating of product|
+   | description   | string   | manufacturer description of product |
+
+#### Categories
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | {    |   |  |
+   | sports     | String  | Sports |
+   | cheap      | String  | Products <= $25 |
+   | over 50    | String  | Products for the elderly |
+   | occasion   | String  | Occasion for prodtuct (i.e. weddings, religious ceremonies, etc|
+   | }   |    | |
+
+#### User
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | objectName       | String   | unique name of User... maybe a pointer? |
+   | Email            | String   | Unique User Email |
+   | Password         | String   | Unique password associated to User |
+   | Gifting Profiles | List<object>  | List of gifting profile objects |
+   | Saved Gifts      | List<object>   | list of saved products|
+   
+#### Gifting Profiles
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | name                | String   | name of person whom user is searching for gifts |
+   | birthday            | String   | birthday of the user |
+   | List of Gift Ideas  | List<strings>   | List of possible products for this user |
+   | Interests | List<strings>   | List of possible product categories  |
+   | demographics      | List<strings>    | Possible category factors based on demographics|
+   | Upcoming Occasions | List<strings>   | List of upcoming occasions for product search |
+
+
+
 ### Networking
 #### List of network requests by screen
    - Home Feed Screen
@@ -147,16 +184,3 @@ Built as group project app for Android CodePath 2020 Fall Cohort.
     `GET`    | /Offers.Listings.DeliveryInfo.IsPrimeEligible | Returns whether an offer for the product is prime eligible.
     `GET`    | /Offers.Listings.Price| Returns offer buying price of a product.
 
-
-### [BONUS] Digital Wireframes & Mockups
-
-### [BONUS] Interactive Prototype
-
-## Schema 
-[This section will be completed in Unit 9]
-### Models
-[Add table of models]
-### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
