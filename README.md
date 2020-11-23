@@ -86,6 +86,24 @@ Built as group project app for Android CodePath 2020 Fall Cohort.
 [Add picture of your hand sketched wireframes in this section]
 <img src="PXL_20201113_051915901.jpg" width=600>
 
+##### Amazon Web Servives API for Products
+- Base URL - [webservices.amazon.com](webservices.amazon.com)
+
+   HTTP Verb | Endpoint | Description
+   ----------|----------|------------
+    `GET`    | /BrowseNodeInfo.BrowseNodes | Get the browse nodes associated with the item. Using this resource only will return Id, DisplayName, ContextFreeName and IsRoot information associated with each browse node.
+    `GET`    | /BrowseNodeInfo.BrowseNodes.SalesRank | Get the SalesRank information with each of the browse nodes the item falls under. 
+    `GET`    | /Images.Primary.[Small/Medium/Large]   | Returns sized primary image for each item.
+    `GET`    | /ItemInfo.ByLineInfo | Returns set of attributes that specifies basic information of the item.
+    `GET`    | /ItemInfo.Classifications | Returns set of attributes that are used to classify an item into a particular category 
+    `GET`    | /ItemInfo.ContentInfo   | Returns set of attributes that are specific to the content like Books, Movies, etc.
+    `GET`    | /ItemInfo.ProductInfo| Returns set of attributes that describe non-technical aspects of an item.
+    `GET`    | /ItemInfo.Title | Returns the title of the product. 
+    `GET`    | /Offers.Listings.Availability.Message | Returns Availability message of the product.
+    `GET`    | /Offers.Listings.DeliveryInfo.IsPrimeEligible | Returns whether an offer for the product is prime eligible.
+    `GET`    | /Offers.Listings.Price| Returns offer buying price of a product.
+
+
 ### [BONUS] Digital Wireframes & Mockups
 
 ### [BONUS] Interactive Prototype
