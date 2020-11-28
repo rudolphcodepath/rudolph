@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_explore"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="@string/search_screen"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_find"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_card_giftcard_24"
+        android:title="@string/gift_screen"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_profiles"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="@string/profiles_screen"
+        app:showAsAction="always" />
+
+</menu>
