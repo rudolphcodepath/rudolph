@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">rudolph</string>
+    <string name="quick_find_button">quick find</string>
+    <string name="in_depth_search_button">in-depth search</string>
+    <string name="search_screen">\"explore\"</string>
+    <string name="gift_screen">find_gift</string>
+    <string name="profiles_screen">\"see_profiles\"</string>
+    <string name="settings">settings</string>
+</resources>
