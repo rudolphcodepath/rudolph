@@ -6,4 +6,8 @@
     <string name="gift_screen">find_gift</string>
     <string name="profiles_screen">\"see_profiles\"</string>
     <string name="settings">settings</string>
+    <string name="email_address">email address</string>
+    <string name="password">password</string>
+    <string name="login">login</string>
+    <string name="new_user_prompt"><u>New user? Click here to create an account</u></string>
 </resources>
