@@ -9,5 +9,9 @@
     <string name="email_address">email address</string>
     <string name="password">password</string>
     <string name="login">login</string>
+    <string name="signup">sign up</string>
     <string name="new_user_prompt"><u>New user? Click here to create an account</u></string>
+    <string name="create_an_account">create an account</string>
+    <string name="first_name">first name</string>
+    <string name="new_password">password (at least 6 chars)</string>
 </resources>

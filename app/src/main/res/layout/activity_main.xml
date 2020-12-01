@@ -78,6 +78,7 @@
         app:menu="@menu/menu_bottom_navigation"
         app:labelVisibilityMode="unlabeled"
         app:itemIconTint="@android:color/darker_gray"
+        android:background="@color/white"
         />
 
 
