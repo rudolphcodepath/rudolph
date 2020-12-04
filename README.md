@@ -183,4 +183,12 @@ Built as group project app for Android CodePath 2020 Fall Cohort.
     `GET`    | /Offers.Listings.Availability.Message | Returns Availability message of the product.
     `GET`    | /Offers.Listings.DeliveryInfo.IsPrimeEligible | Returns whether an offer for the product is prime eligible.
     `GET`    | /Offers.Listings.Price| Returns offer buying price of a product.
+    
+    
+#### Build sprint 1 progress
+
+Created basic login flow. 
+
+<img src='sprint1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
 

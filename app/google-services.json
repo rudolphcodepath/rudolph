@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "627793780910",
+    "firebase_url": "https://rudolph-96b82.firebaseio.com",
+    "project_id": "rudolph-96b82",
+    "storage_bucket": "rudolph-96b82.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:627793780910:android:ef1225af090ac2e9388d3f",
+        "android_client_info": {
+          "package_name": "com.example.rudolph"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "627793780910-ash9pn4euprf5ni8ulgto75rn9gkfle0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9ZR60Vrins-koD9kPtquuqMxNkaxntLQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "627793780910-ash9pn4euprf5ni8ulgto75rn9gkfle0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
