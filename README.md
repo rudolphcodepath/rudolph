@@ -27,24 +27,24 @@ Built as group project app for Android CodePath 2020 Fall Cohort.
 
 **Required Must-have Stories**
 
-[] user is able to input demographics, relation, and interests of the giftee 
-[] user should see list of gift recommendations and categories based on that input
-[] rating system for whether the recommendation is good or not - algorithm should take the rating into account
-[] user can create profiles for the people in their life that keeps track of their birthday, any other gift-giving holidays they celebrate, interests, gifts previously received, ideas for future gifts, etc.
-[] app should take into account what past gifts a person has received and liked, along with their interests, to match gifts for future users
-[x] user can log in with an email address associated with their account
+- [ ] user is able to input demographics, relation, and interests of the giftee 
+- [ ] user should see list of gift recommendations and categories based on that input
+- [ ] rating system for whether the recommendation is good or not - algorithm should take the rating into account
+- [ ] user can create profiles for the people in their life that keeps track of their birthday, any other gift-giving holidays they celebrate, interests, gifts previously received, ideas for future gifts, etc.
+- [ ] app should take into account what past gifts a person has received and liked, along with their interests, to match gifts for future users
+- [x] user can log in with an email address associated with their account
 
 **Optional Nice-to-have Stories**
 
-[] import contact list from phone to create profiles
-[] incorporation of Honey API for discounted products
-[] browse gifts by category
-[] machine learning model for gift recommendation
-[] two options for gift browsing: quick find vs in depth search
-    [] quick find has shortlist of icons representing different categories/interests
-    [] in-depth search includes options for specifiying the occasion (wedding, birthday, religious holiday, etc)
-[] images for products/gifts 
-[] some sort of method to collect data on gifts and specific products from across the internet
+- [ ] import contact list from phone to create profiles
+- [ ] incorporation of Honey API for discounted products
+- [ ] browse gifts by category
+- [ ] machine learning model for gift recommendation
+- [ ] two options for gift browsing: quick find vs in depth search
+    - [ ] quick find has shortlist of icons representing different categories/interests
+    - [ ] in-depth search includes options for specifiying the occasion (wedding, birthday, religious holiday, etc)
+- [ ] images for products/gifts 
+- [ ] some sort of method to collect data on gifts and specific products from across the internet
 
 ### 2. Screen Archetypes
 
