@@ -192,4 +192,11 @@ Created basic login flow.
 
 <img src='sprint1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
+#### Build sprint 2 progress
+
+Set up Fragment changing logic, started organizing data within Firebase. Mostly backend work.
+
+<img src='sprint2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+
 
