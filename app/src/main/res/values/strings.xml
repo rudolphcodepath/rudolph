@@ -14,4 +14,7 @@
     <string name="create_an_account">create an account</string>
     <string name="first_name">first name</string>
     <string name="new_password">password (at least 6 chars)</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="profile_image">profile_image</string>
 </resources>
