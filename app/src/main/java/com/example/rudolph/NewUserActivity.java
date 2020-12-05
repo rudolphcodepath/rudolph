@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.rudolph.Models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -19,12 +20,15 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class NewUserActivity extends AppCompatActivity {
 
     public static final String TAG = "NewUserActivity";
 
     private FirebaseAuth mAuth;
+    private DatabaseReference mDatabase;
 
     EditText etName;
     EditText etEmail;
@@ -43,6 +47,7 @@ public class NewUserActivity extends AppCompatActivity {
         btnNewUser = findViewById(R.id.btnCreateNewUser);
 
         mAuth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
         btnNewUser.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,10 +104,16 @@ public class NewUserActivity extends AppCompatActivity {
                 });
     }
 
-    private void updateUI(FirebaseUser user) {
-        if (user != null) {
+    private void updateUI(FirebaseUser currUser) {
+        if (currUser != null) {
+            User user = new User(currUser.getDisplayName(), currUser.getEmail(), currUser.getUid());
+            mDatabase.child("users").child(user.getUUid()).setValue(user);
             Intent i = new Intent(this, MainActivity.class);
             startActivity(i);
+            finish();
+        }
+        else {
+            etPassword.setText("");
         }
     }
 }

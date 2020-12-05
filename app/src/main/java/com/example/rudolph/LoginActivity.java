@@ -13,20 +13,26 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.rudolph.Models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
+    private DatabaseReference mDatabase;
 
     EditText etEmail;
     EditText etPassword;
     Button btnLogin;
     Button btnNewUser;
+
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,6 +45,7 @@ public class LoginActivity extends AppCompatActivity {
         btnNewUser = findViewById(R.id.btnNewUser);
 
         mAuth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
         FirebaseUser currUser = mAuth.getCurrentUser();
         updateUI(currUser);
 
@@ -78,8 +85,11 @@ public class LoginActivity extends AppCompatActivity {
 
     private void updateUI(FirebaseUser currUser) {
         if (currUser != null) {
+            User user = new User(currUser.getDisplayName(), currUser.getEmail(), currUser.getUid());
+            mDatabase.child("users").child(user.getUUid()).setValue(user);
             Intent i = new Intent(this, MainActivity.class);
             startActivity(i);
+            finish();
         }
         else {
             etPassword.setText("");

@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -20,6 +21,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     public static final int RC_SIGN_IN = 20;
+
+    public static final String TAG = "MainActivity";
 
     final FragmentManager fragmentManager = getSupportFragmentManager();
 
@@ -44,11 +47,15 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     default:
                         fragment = new FindFragment();
+//                        Log.d(TAG, "inside default");
                 }
-                fragmentManager.beginTransaction().replace(R.id.fLayout, fragment);
+                fragmentManager.beginTransaction().replace(R.id.fLayout, fragment).commit();
+                Log.d(TAG, "transaction complete");
+
                 return true;
             }
         });
+        bottomNavigationView.setSelectedItemId(R.id.action_find);
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
