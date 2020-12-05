@@ -9,6 +9,18 @@ public class Person {
     String name;
     List<String> interests;
 
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public List<String> getInterests() {
+        return interests;
+    }
+
     public Person() {
 
     }
