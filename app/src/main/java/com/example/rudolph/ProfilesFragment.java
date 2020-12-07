@@ -49,7 +49,6 @@ public class ProfilesFragment extends Fragment {
         currUser = mAuth.getCurrentUser();
         mDatabaseRef = FirebaseDatabase.getInstance().getReference();
 
-
     }
 
     @Override

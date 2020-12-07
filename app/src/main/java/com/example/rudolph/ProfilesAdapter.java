@@ -41,7 +41,7 @@ public class ProfilesAdapter extends RecyclerView.Adapter<ProfilesAdapter.ViewHo
         return people.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+    static class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView ivProfile;
         TextView tvName;
@@ -52,7 +52,6 @@ public class ProfilesAdapter extends RecyclerView.Adapter<ProfilesAdapter.ViewHo
             ivProfile = itemView.findViewById(R.id.ivProfile);
             tvName = itemView.findViewById(R.id.tvName);
             tvBirthday = itemView.findViewById(R.id.tvBirthday);
-
         }
 
         public void bind(Person person) {
