@@ -81,11 +81,9 @@ public class ProfilesFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         rvPeople = (RecyclerView) view.findViewById(R.id.rvPeople);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         List<Person> people = getPeople();
-        ProfilesAdapter adapter = new ProfilesAdapter(null, getActivity());
-        rvPeople.setAdapter(adapter);
-        rvPeople.setLayoutManager(layoutManager);
+//        ProfilesAdapter adapter = new ProfilesAdapter(null, getActivity());
+//        rvPeople.setAdapter(adapter);
 
     }
 
