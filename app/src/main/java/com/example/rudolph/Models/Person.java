@@ -5,16 +5,21 @@ import java.util.List;
 
 public class Person {
 
-    Date birthday;
-    String name;
+    String birthday;
+    String firstName;
+    String lastName;
     List<String> interests;
 
-    public Date getBirthday() {
+    public String getBirthday() {
         return birthday;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 
     public List<String> getInterests() {
@@ -25,9 +30,10 @@ public class Person {
 
     }
 
-    public Person(Date birthday, String name, List<String> interests) {
+    public Person(String birthday, String firstName, String lastName, List<String> interests) {
         this.birthday = birthday;
-        this.name = name;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.interests = interests;
     }
 }
