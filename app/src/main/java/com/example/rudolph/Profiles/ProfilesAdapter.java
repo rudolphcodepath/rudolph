@@ -1,4 +1,4 @@
-package com.example.rudolph;
+package com.example.rudolph.Profiles;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.rudolph.Models.Person;
+import com.example.rudolph.R;
 
 import java.util.List;
 
@@ -55,7 +56,7 @@ public class ProfilesAdapter extends RecyclerView.Adapter<ProfilesAdapter.ViewHo
         }
 
         public void bind(Person person) {
-            tvName.setText(person.getName());
+            tvName.setText(person.getFirstName());
             tvBirthday.setText(person.getBirthday().toString());
         }
     }

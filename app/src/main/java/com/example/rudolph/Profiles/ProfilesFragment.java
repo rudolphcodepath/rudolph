@@ -1,20 +1,28 @@
-package com.example.rudolph;
+package com.example.rudolph.Profiles;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.rudolph.Models.Person;
 import com.example.rudolph.Models.User;
+import com.example.rudolph.R;
+import com.example.rudolph.databinding.FragmentProfilesBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -34,6 +42,9 @@ public class ProfilesFragment extends Fragment {
     private FirebaseUser currUser;
     private DatabaseReference mDatabaseRef;
 
+    FragmentManager fragmentManager;
+    FragmentProfilesBinding binding;
+
     RecyclerView rvPeople;
 
 
@@ -49,12 +60,15 @@ public class ProfilesFragment extends Fragment {
         currUser = mAuth.getCurrentUser();
         mDatabaseRef = FirebaseDatabase.getInstance().getReference();
 
+        fragmentManager = getFragmentManager();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        binding = FragmentProfilesBinding.inflate(inflater, container, false);
+        View view = binding.getRoot();
         ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -68,27 +82,41 @@ public class ProfilesFragment extends Fragment {
             }
         };
 
-
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("users").child(currUser.getUid());
         ref.addListenerForSingleValueEvent(valueEventListener);
 
+        setHasOptionsMenu(true);
+        ((AppCompatActivity)getActivity()).setSupportActionBar(binding.toolbar);
 
-        return inflater.inflate(R.layout.fragment_profiles, container, false);
+
+        return view;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        rvPeople = (RecyclerView) view.findViewById(R.id.rvPeople);
+        rvPeople = binding.rvPeople;
         List<Person> people = getPeople();
-//        ProfilesAdapter adapter = new ProfilesAdapter(null, getActivity());
-//        rvPeople.setAdapter(adapter);
 
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_top_bar_profiles, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        fragmentManager.beginTransaction().replace(R.id.fLayout, new NewProfileFragment()).commit();
+        return super.onOptionsItemSelected(item);
     }
 
     private List<Person> getPeople() {
         Query peopleQuery = mDatabaseRef.child("people").child(currUser.getUid()).orderByKey();
+
 
         ValueEventListener valueEventListener = new ValueEventListener() {
             @Override

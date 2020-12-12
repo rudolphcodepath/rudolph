@@ -25,7 +25,7 @@ public class User {
         people = new ArrayList<>();
         List<String> interests = new ArrayList<>();
         interests.add("fishing");
-        people.add(0, new Person(new Date(), "Test", interests));
+        people.add(0, new Person("birthday", "Test", "Test", interests));
     }
 
     public String getUUid() {

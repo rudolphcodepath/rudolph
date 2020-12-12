@@ -51,7 +51,6 @@ public class LoginActivity extends AppCompatActivity implements LoginService.Log
     public void onSuccess() {
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
-        finish();
     }
 
     @Override
@@ -78,5 +77,6 @@ public class LoginActivity extends AppCompatActivity implements LoginService.Log
     protected void onDestroy() {
         super.onDestroy();
         loginService = null;
+        finish();
     }
 }

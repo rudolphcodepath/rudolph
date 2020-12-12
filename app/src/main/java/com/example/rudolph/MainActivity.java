@@ -8,14 +8,10 @@ import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 
-import com.firebase.ui.auth.AuthUI;
+import com.example.rudolph.Profiles.ProfilesFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import java.util.Arrays;
-import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -72,9 +68,4 @@ public class MainActivity extends AppCompatActivity {
 //                RC_SIGN_IN);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_top_bar, menu);
-        return true;
-    }
 }
