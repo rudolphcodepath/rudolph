@@ -30,7 +30,7 @@ Built as group project app for Android CodePath 2020 Fall Cohort.
 - [ ] user is able to input demographics, relation, and interests of the giftee 
 - [ ] user should see list of gift recommendations and categories based on that input
 - [ ] rating system for whether the recommendation is good or not - algorithm should take the rating into account
-- [ ] user can create profiles for the people in their life that keeps track of their birthday, any other gift-giving holidays they celebrate, interests, gifts previously received, ideas for future gifts, etc.
+- [x] user can create profiles for the people in their life that keeps track of their birthday, any other gift-giving holidays they celebrate, interests, gifts previously received, ideas for future gifts, etc.
 - [ ] app should take into account what past gifts a person has received and liked, along with their interests, to match gifts for future users
 - [x] user can log in with an email address associated with their account
 
@@ -191,5 +191,19 @@ Built as group project app for Android CodePath 2020 Fall Cohort.
 Created basic login flow. 
 
 <img src='sprint1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+#### Build sprint 2 progress
+
+Set up Fragment changing logic, started organizing data within Firebase. Mostly backend work.
+
+<img src='sprint2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+### Build sprint 3 progress
+
+Built out profile creation flow. Gift search framework still in progress. 
+
+<img src='sprint3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+
 
 

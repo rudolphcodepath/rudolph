@@ -1,0 +1,18 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:drawable="@drawable/edit_text_bg_light_bg">
+    </item>
+
+    <item>
+        <rotate
+            android:fromDegrees="-45"
+            android:toDegrees="0"
+            android:pivotX="130%"
+            android:pivotY="20%" >
+            <shape
+                android:shape="rectangle" >
+                <solid android:color="@color/colorPrimaryDark" />
+            </shape>
+        </rotate>
+    </item>
+</layer-list>
