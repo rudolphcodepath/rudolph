@@ -27,4 +27,19 @@
     <string name="first_name_prompt">First Name</string>
     <string name="last_name_prompt">Last Name</string>
     <string name="birthday_prompt">Birthday</string>
+<<<<<<< HEAD
+=======
+    <string name="interests_prompt">Interests</string>
+    <string-array name="interests_array">
+        <item>Select</item>
+        <item>Sports</item>
+        <item>Art</item>
+        <item>Travel</item>
+        <item>Video games</item>
+        <item>Nature</item>
+        <item>Music</item>
+        <item>Reading</item>
+        <item>Cooking</item>
+    </string-array>
+>>>>>>> 713b8e1fcc6f8bed6ad7815f4df6a06b6a31eebc
 </resources>

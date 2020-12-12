@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Profiles.NewProfileFragment">
+=======
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/constraintLayout"
+    tools:context=".Profiles.NewProfileFragment"
+    android:layout_marginBottom="20dp">
+>>>>>>> 713b8e1fcc6f8bed6ad7815f4df6a06b6a31eebc
 
     <androidx.appcompat.widget.Toolbar
         app:layout_constraintTop_toTopOf="parent"
@@ -120,7 +136,42 @@
         />
 
 
+<<<<<<< HEAD
 
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+=======
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/labelInterests"
+        android:layout_marginTop="40dp"
+        android:text="@string/interests_prompt"
+        android:textColor="@color/black"
+        android:layout_marginStart="24dp"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/enterBirthday"/>
+
+    <Spinner
+        android:id="@+id/interests"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/labelInterests"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/spinner_bg"
+        android:layout_marginEnd="20dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        app:layout_constraintTop_toBottomOf="@id/interests"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+>>>>>>> 713b8e1fcc6f8bed6ad7815f4df6a06b6a31eebc

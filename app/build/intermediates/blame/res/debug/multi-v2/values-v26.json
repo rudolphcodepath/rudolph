@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/meganren/AndroidStudioProjects/Rudolph/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v26/values-v26.xml",
+            "outputFile": "C:\\Users\\JaHer\\AndroidStudioProjects\\Rudolph\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v26\\values-v26.xml",
             "map": [
                 {
-                    "source": "/Users/meganren/.gradle/caches/transforms-2/files-2.1/85617a0bd0c144064dce7eaf3664b2d0/appcompat-1.2.0/res/values-v26/values-v26.xml",
+                    "source": "C:\\Users\\JaHer\\.gradle\\caches\\transforms-2\\files-2.1\\85617a0bd0c144064dce7eaf3664b2d0\\appcompat-1.2.0\\res\\values-v26\\values-v26.xml",
                     "from": {
                         "startLines": "2,3,4,8,12,16",
                         "startColumns": "4,4,4,4,4,4",
@@ -15,7 +15,7 @@
                     }
                 },
                 {
-                    "source": "/Users/meganren/.gradle/caches/transforms-2/files-2.1/5d9417e06842f0e8e7e140bbd0c63529/jetified-firebase-ui-auth-6.4.0/res/values-v26/values-v26.xml",
+                    "source": "C:\\Users\\JaHer\\.gradle\\caches\\transforms-2\\files-2.1\\5d9417e06842f0e8e7e140bbd0c63529\\jetified-firebase-ui-auth-6.4.0\\res\\values-v26\\values-v26.xml",
                     "from": {
                         "startLines": "2,6,10,14",
                         "startColumns": "4,4,4,4",

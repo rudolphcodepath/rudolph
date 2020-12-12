@@ -1,6 +1,7 @@
 package com.example.rudolph.Profiles;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.rudolph.Models.Person;
 import com.example.rudolph.R;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class ProfilesAdapter extends RecyclerView.Adapter<ProfilesAdapter.ViewHolder> {
@@ -45,19 +49,24 @@ public class ProfilesAdapter extends RecyclerView.Adapter<ProfilesAdapter.ViewHo
     static class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView ivProfile;
-        TextView tvName;
+        TextView tvFirstName;
+        TextView tvLastName;
         TextView tvBirthday;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             ivProfile = itemView.findViewById(R.id.ivProfile);
-            tvName = itemView.findViewById(R.id.tvName);
+            tvFirstName = itemView.findViewById(R.id.tvFirstName);
+            tvLastName = itemView.findViewById(R.id.tvLastName);
             tvBirthday = itemView.findViewById(R.id.tvBirthday);
         }
 
         public void bind(Person person) {
             tvName.setText(person.getFirstName());
             tvBirthday.setText(person.getBirthday().toString());
+            tvFirstName.setText(person.getFirstName());
+            tvLastName.setText(person.getLastName());
+            tvBirthday.setText(person.getBirthday());
         }
     }
 }
