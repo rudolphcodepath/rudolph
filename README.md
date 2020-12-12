@@ -198,7 +198,7 @@ Set up Fragment changing logic, started organizing data within Firebase. Mostly 
 
 <img src='sprint2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-### Buildd spring 3 progress
+### Build sprint 3 progress
 
 Built out profile creation flow. Gift search framework still in progress. 
 
