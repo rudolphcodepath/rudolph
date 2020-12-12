@@ -38,24 +38,18 @@ import java.util.List;
 import java.util.Map;
 
 
-public class ProfilesFragment extends Fragment {
+public class ProfilesFragment extends Fragment implements ProfileService.ProfilesCallback {
 
     public static final String TAG = "ProfilesFragment";
 
-    private FirebaseAuth mAuth;
-    private FirebaseUser currUser;
-    private DatabaseReference mDatabaseRef;
+    ProfileService service;
 
     FragmentManager fragmentManager;
     FragmentProfilesBinding binding;
 
     List<Person> people;
 
-    public interface ProfilesCallback {
-        void onCallback(Map<String, String> toAdd);
-
-        void finishedLoading();
-    }
+    ProfilesAdapter adapter;
 
 
     public ProfilesFragment() {
@@ -66,12 +60,7 @@ public class ProfilesFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mAuth = FirebaseAuth.getInstance();
-        currUser = mAuth.getCurrentUser();
-        mDatabaseRef = FirebaseDatabase.getInstance().getReference();
-
         fragmentManager = getFragmentManager();
-        people = new ArrayList<>();
     }
 
     @Override
@@ -80,25 +69,13 @@ public class ProfilesFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = FragmentProfilesBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
-        ValueEventListener valueEventListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                User user = snapshot.getValue(User.class);
-                Log.d("ProfilesFragment", user.getEmail());
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        };
-
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("users").child(currUser.getUid());
-        ref.addListenerForSingleValueEvent(valueEventListener);
+        people = new ArrayList<>();
+        service = new ProfileService();
+        service.getPeople(this);
 
         setHasOptionsMenu(true);
         ((AppCompatActivity)getActivity()).setSupportActionBar(binding.toolbar);
-
 
         return view;
     }
@@ -107,23 +84,7 @@ public class ProfilesFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         Log.d(TAG, "inside onViewCreated");
-        final ProfilesAdapter adapter = new ProfilesAdapter(people, getContext());
-
-
-        getPeople(new ProfilesCallback() {
-            @Override
-            public void onCallback(Map<String, String> toAdd) {
-                Log.d(TAG, toAdd.toString());
-                people.add(new Person(toAdd.get("birthday"), toAdd.get("firstName"), toAdd.get("lastName"), null));
-                Log.d(TAG, "added person");
-            }
-
-            @Override
-            public void finishedLoading() {
-                binding.rvPeople.setAdapter(adapter);
-            }
-
-        });
+        adapter = new ProfilesAdapter(people, getContext());
     }
 
     @Override
@@ -134,31 +95,17 @@ public class ProfilesFragment extends Fragment {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        fragmentManager.beginTransaction().replace(R.id.fLayout, new NewProfileFragment()).commit();
+        fragmentManager.beginTransaction().replace(R.id.fLayout, new NewProfileFragment()).addToBackStack("Profiles").commit();
         return super.onOptionsItemSelected(item);
     }
 
-    private void getPeople(final ProfilesCallback callback) {
-        Log.d(TAG, "inside getPeople");
-        DatabaseReference peopleRef = FirebaseDatabase.getInstance().getReference().child(Constants.PEOPLE).child(currUser.getUid());
-        String test = peopleRef.toString();
-        Log.d(TAG, "test " + test);
-        peopleRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Log.d(TAG, "inside onDataChange");
-                for (DataSnapshot dsp : snapshot.getChildren()) {
-                    callback.onCallback((Map<String, String>) dsp.getValue());
-                }
-                callback.finishedLoading();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.d(TAG, "onCancelled");
-            }
-        });
-        Log.d(TAG, "returning");
+    @Override
+    public void onCallback(Map<String, String> toAdd) {
+        people.add(new Person(toAdd.get("birthday"), toAdd.get("firstName"), toAdd.get("lastName"), null));
     }
 
+    @Override
+    public void finishedLoading() {
+        binding.rvPeople.setAdapter(adapter);
+    }
 }
